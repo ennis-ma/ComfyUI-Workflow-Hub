@@ -50,19 +50,13 @@ A modern web interface for managing and executing ComfyUI workflows. This projec
    npm install
    ```
 
+   > **Note**: If you're getting "npm not recognized" errors, you need to install Node.js first. See the [detailed installation guide](INSTALLATION.md) for step-by-step instructions.
+
 3. Create a `.env` file in the root directory by copying the example:
    ```bash
    cp .env.example .env
    ```
-   Then edit the `.env` file with your configuration:
-   ```env
-   # ComfyUI API endpoints
-   COMFYUI_URL=http://localhost:8188        # URL of your ComfyUI instance
-   COMFYUI_WS_URL=ws://localhost:8188/ws    # WebSocket URL of your ComfyUI instance
-
-   # Server configuration
-   PORT=3000                                # Port for the Workflow Hub server to run on
-   ```
+   Then edit the `.env` file with your configuration.
 
 4. Start the server:
    ```bash
@@ -70,6 +64,20 @@ A modern web interface for managing and executing ComfyUI workflows. This projec
    ```
 
 5. Open your browser and navigate to `http://localhost:3000`
+
+### Docker Installation (Alternative)
+
+If you prefer using Docker:
+
+```bash
+# Build the Docker image
+docker build -t comfyui-workflow-hub .
+
+# Run the container
+docker run -p 3000:3000 -e COMFYUI_URL=http://host.docker.internal:8188 comfyui-workflow-hub
+```
+
+See the [detailed installation guide](INSTALLATION.md) for more options and troubleshooting.
 
 ## API Documentation
 
