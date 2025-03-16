@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API Documentation - ComfyUI Workflow Hub</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-gray-100 text-gray-800 min-h-screen">
+    <div class="container mx-auto px-4 py-8">
+        <header class="text-center mb-8">
+            <h1 class="text-4xl md:text-5xl font-bold mb-4">ComfyUI Workflow Hub</h1>
+            <p class="text-xl text-gray-600 mb-4">API Documentation</p>
+            <a href="/" class="text-indigo-600 hover:text-indigo-800 font-medium">← Back to Workflow Hub</a>
+        </header>
+
+        <div class="max-w-4xl mx-auto">
+            <div class="bg-white p-6 rounded-xl shadow-lg">
+                <div class="space-y-8">
+                    <!-- API Log Section -->
+                    <div>
+                        <h2 class="text-2xl font-semibold mb-4">API Log</h2>
+                        <div class="bg-gray-50 p-4 rounded-lg">
+                            <pre id="api-session" class="text-gray-800 text-sm max-h-[300px] overflow-y-auto"></pre>
+                        </div>
+                    </div>
+
+                    <!-- API Endpoints Section -->
+                    <div>
+                        <h2 class="text-2xl font-semibold mb-4">API Endpoints</h2>
+                        <div class="space-y-6">
+                            <!-- Workflow Management -->
+                            <div>
+                                <h3 class="text-xl font-semibold mb-3">Workflow Management</h3>
+                                <div class="bg-gray-50 p-4 rounded-lg">
+                                    <ul class="space-y-4">
+                                        <li>
+                                            <div class="flex items-start space-x-4">
+                                                <code class="bg-gray-200 px-2 py-1 rounded whitespace-nowrap">GET /api/workflows</code>
+                                                <div>
+                                                    <p class="font-medium">List all workflows</p>
+                                                    <p class="text-sm text-gray-600">Returns a list of all saved workflows with their metadata.</p>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="flex items-start space-x-4">
+                                                <code class="bg-gray-200 px-2 py-1 rounded whitespace-nowrap">GET /api/workflows/:id</code>
+                                                <div>
+                                                    <p class="font-medium">Get workflow details</p>
+                                                    <p class="text-sm text-gray-600">Retrieves detailed information about a specific workflow.</p>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="flex items-start space-x-4">
+                                                <code class="bg-gray-200 px-2 py-1 rounded whitespace-nowrap">POST /api/upload-workflow</code>
+                                                <div>
+                                                    <p class="font-medium">Upload a workflow</p>
+                                                    <p class="text-sm text-gray-600">Upload a new workflow JSON file with optional name and description.</p>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="flex items-start space-x-4">
+                                                <code class="bg-gray-200 px-2 py-1 rounded whitespace-nowrap">DELETE /api/workflows/:id</code>
+                                                <div>
+                                                    <p class="font-medium">Delete a workflow</p>
+                                                    <p class="text-sm text-gray-600">Remove a workflow from the system.</p>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <!-- Workflow Execution -->
+                            <div>
+                                <h3 class="text-xl font-semibold mb-3">Workflow Execution</h3>
+                                <div class="bg-gray-50 p-4 rounded-lg">
+                                    <ul class="space-y-4">
+                                        <li>
+                                            <div class="flex items-start space-x-4">
+                                                <code class="bg-gray-200 px-2 py-1 rounded whitespace-nowrap">POST /api/upload-image</code>
+                                                <div>
+                                                    <p class="font-medium">Upload an input image</p>
+                                                    <p class="text-sm text-gray-600">Upload an image to be used as input for workflow execution.</p>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="flex items-start space-x-4">
+                                                <code class="bg-gray-200 px-2 py-1 rounded whitespace-nowrap">POST /api/execute</code>
+                                                <div>
+                                                    <p class="font-medium">Execute a workflow</p>
+                                                    <p class="text-sm text-gray-600">Start execution of a workflow with specified inputs.</p>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="flex items-start space-x-4">
+                                                <code class="bg-gray-200 px-2 py-1 rounded whitespace-nowrap">GET /api/status/:sessionId</code>
+                                                <div>
+                                                    <p class="font-medium">Check execution status</p>
+                                                    <p class="text-sm text-gray-600">Get the current status and progress of a workflow execution.</p>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="flex items-start space-x-4">
+                                                <code class="bg-gray-200 px-2 py-1 rounded whitespace-nowrap">GET /api/images/:filename</code>
+                                                <div>
+                                                    <p class="font-medium">Get an image</p>
+                                                    <p class="text-sm text-gray-600">Retrieve a generated or uploaded image file.</p>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <!-- WebSocket -->
+                            <div>
+                                <h3 class="text-xl font-semibold mb-3">Real-time Updates</h3>
+                                <div class="bg-gray-50 p-4 rounded-lg">
+                                    <ul class="space-y-4">
+                                        <li>
+                                            <div class="flex items-start space-x-4">
+                                                <code class="bg-gray-200 px-2 py-1 rounded whitespace-nowrap">WebSocket /ws?clientId=:clientId</code>
+                                                <div>
+                                                    <p class="font-medium">WebSocket Connection</p>
+                                                    <p class="text-sm text-gray-600">Establish a WebSocket connection for real-time progress updates and notifications.</p>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="text-center text-gray-500 mt-12 pb-6">
+        <p>Created with ComfyUI API</p>
+    </footer>
+
+    <script>
+        // Simple script to handle API log syncing
+        const apiSession = document.getElementById('api-session');
+        
+        function updateApiLog(message) {
+            const timestamp = new Date().toLocaleTimeString();
+            const logEntry = `[${timestamp}] ${message}\n`;
+            apiSession.textContent += logEntry;
+            apiSession.scrollTop = apiSession.scrollHeight;
+        }
+
+        // Example WebSocket connection for API logs
+        const ws = new WebSocket(`ws://${window.location.host}/ws?clientId=api-docs-${Date.now()}`);
+        ws.onmessage = (event) => {
+            const data = JSON.parse(event.data);
+            if (data.type === 'log') {
+                updateApiLog(data.message);
+            }
+        };
+    </script>
+</body>
+</html> 
