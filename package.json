@@ -1,0 +1,45 @@
+{
+  "name": "comfyui-workflow-hub",
+  "version": "1.0.0",
+  "description": "A modern web interface for managing and executing ComfyUI workflows",
+  "main": "api.js",
+  "scripts": {
+    "start": "node api.js",
+    "dev": "nodemon api.js",
+    "install-deps": "npm install"
+  },
+  "keywords": [
+    "comfyui",
+    "workflow",
+    "manager",
+    "hub",
+    "ai",
+    "stable-diffusion"
+  ],
+  "author": "ComfyUI Workflow Hub Contributors",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yourusername/comfyui-workflow-hub"
+  },
+  "bugs": {
+    "url": "https://github.com/yourusername/comfyui-workflow-hub/issues"
+  },
+  "homepage": "https://github.com/yourusername/comfyui-workflow-hub#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.18.2",
+    "form-data": "^4.0.0",
+    "multer": "^1.4.5-lts.1",
+    "node-fetch": "^2.7.0",
+    "uuid": "^9.0.1",
+    "ws": "^8.16.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.0"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  }
+}
