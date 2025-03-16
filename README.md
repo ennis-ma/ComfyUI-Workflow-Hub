@@ -325,4 +325,4 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## Support
 
-If you encounter any problems or have suggestions, please [open an issue](https://github.com/yourusername/comfyui-workflow-hub/issues). 
+If you encounter any problems or have suggestions, please [open an issue](https://github.com/ennis-ma/comfyui-workflow-hub/issues). 
