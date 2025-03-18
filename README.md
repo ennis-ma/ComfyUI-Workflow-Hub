@@ -1,3 +1,8 @@
+## Author
+
+Hi! 👋 I'm based in 🇨🇦 Calgary actively seeking new opportunities in software development. With a passion for creating intuitive user interfaces product, I'm excited to bring my skills to a dynamic team.
+Feel free to reach out if you're looking for a developer who's passionate about creating exceptional user experiences!
+
 # ComfyUI Workflow Hub
 
 A modern web interface for managing and executing ComfyUI workflows. This project provides a user-friendly way to upload, manage, and execute ComfyUI workflows through a clean web interface or API.
@@ -322,12 +327,6 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 - [ComfyUI](https://github.com/comfyanonymous/ComfyUI) - The awesome stable diffusion GUI
 - [Tailwind CSS](https://tailwindcss.com/) - For the modern UI components
-
-## Author
-
-Hi! 👋 I'm actively seeking new opportunities in software development, particularly in roles involving modern web technologies and UI/UX development. With a passion for creating intuitive user interfaces product, I'm excited to bring my skills to a dynamic team.
-
-Feel free to reach out if you're looking for a developer who's passionate about creating exceptional user experiences!
 
 ## Support
 
